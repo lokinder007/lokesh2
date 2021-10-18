@@ -1,24 +1,28 @@
+import { NavLink } from "react-router-dom";
+
 const Footer = () => {
   return (
     <div
       style={{
         textAlign: "center",
         fontSize: "1.5em",
-        color:"blue",
-        backgroundColor:"rgb(152, 130, 230)",
+        color: "blue",
+        backgroundColor: "rgb(152, 130, 230)",
         // marginBottom: 10,
-        height:"3em",
-        padding:"1em 0",
+        height: "3em",
+        padding: "1em 0",
       }}
     >
-         &copy; {new Date().getFullYear()} LokeshApp |
+      &copy; {new Date().getFullYear()} LokeshApp |
       Made with ♥ by{" "}
-      <a
-        href="https://www.youtube.com/roadsidecoder"
+
+      {/* <a
+        href="https://www.google.com" target="_blank"  rel="noopener noreferrer"
         style={{ cursor: "pointer" }}
       >
         Lokinder007
-      </a>
+      </a> */}
+      <NavLink to="/about"> Lokinder007 </NavLink>
     </div>
   );
 };
