@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 // import Navbar from '../layout/Navbar'
-import { NavLink, useHistory } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import img from "../images/C.png"
 
 const About = () => {

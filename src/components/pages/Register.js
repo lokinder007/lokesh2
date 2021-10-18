@@ -9,10 +9,10 @@ const Register = () => {
     const history = useHistory();
 
     useEffect(() => {
-        if (localStorage.getItem('user-info')) {
-            history.push("/login");
-        }
-    },[])
+        if (localStorage.getItem('user-login')) {
+            history.push("/services");
+        } else history.push("/register");
+    },[history])
 
     const [user, setUser] = useState({
         name: "",

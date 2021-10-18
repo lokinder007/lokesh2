@@ -18,10 +18,10 @@ const Login = () => {
     const history = useHistory();
 
     useEffect(() => {
-        if (localStorage.getItem('user-info')) {
+        if (localStorage.getItem('user-login')) {
             history.push("/services");
-        }
-    },[])
+        } else history.push("/login")
+    },[history])
 
     // const [user, setUser] = useState({
     //     email: "",
@@ -42,10 +42,19 @@ const Login = () => {
 
     const formSubmit = (e) => {
         e.preventDefault();
-        let data ={email,password}
+        let data ={email, password}
         console.log(data)
 
-        history.push("/services");
+        if (!localStorage.getItem('user-info')) {
+            alert(
+                ` ${email} you are not registered `
+            )
+            history.push("/register");
+        } else {
+
+            localStorage.setItem("user-login", JSON.stringify(data));
+            history.push("/services");
+        }
     }
 
     return (

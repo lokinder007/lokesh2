@@ -7,10 +7,10 @@ const Protected = (props) => {
     const history = useHistory();
 
     useEffect(() => {
-        if (!localStorage.getItem('user-info')) {
+        if (!localStorage.getItem('user-login')) {
             history.push("/register");
         }
-    },[])
+    },[history])
 
     return (
         <div>

@@ -1,21 +1,19 @@
 import React, { useState } from 'react'
-import { Link, NavLink } from 'react-router-dom';
+import { NavDropdown } from 'react-bootstrap'
+import { Link, NavLink, useHistory } from 'react-router-dom';
 import "./navbar.css"
 
 
-const Navbar = () => {
+const Navbar = ({user}) => {
+  const history = useHistory();
+  const userIn = JSON.parse(localStorage.getItem('user-info'));
 
   const [show, setShow] = useState(false)
 
-  // const history = useHistory();
-
-  // const logIn = () => {
-  //      history.push("/login");
-  // }
-
-  // const register = () => {
-  //      history.push("/register");
-  // }
+  function logout() {
+    localStorage.clear();
+    history.push('/login')
+  }
 
   return (
     <>
@@ -47,7 +45,7 @@ const Navbar = () => {
               <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
 
                 {
-                  localStorage.getItem("user-info") ?
+                  user ?
                     <>
 
                       <li className="nav-item">
@@ -77,14 +75,14 @@ const Navbar = () => {
                           Services
                         </NavLink>
                       </li>
+                     
+
                       <li className="nav-item">
-                        <NavLink
-                          activeClassName="menu_active"
-                          className="nav-link"
-                          exact to="/update"
-                          activeStyle={{ color: 'blue', fontWeight: 'bold' }}>
-                          Update
-                        </NavLink>
+                        <NavDropdown title={userIn.name} >
+                          <NavDropdown.Item onClick={()=>{history.push('/profile')} }>Profile</NavDropdown.Item>
+                          <NavDropdown.Item onClick={logout}>Logout</NavDropdown.Item>
+
+                        </NavDropdown>
                       </li>
 
                     </>

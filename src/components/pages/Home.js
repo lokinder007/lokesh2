@@ -1,12 +1,12 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import imgB from "../images/world-map.jpg"
-import Navbar from '../layout/Navbar'
+// import Navbar from '../layout/Navbar'
 
 const Home = () => {
     return (
         <>
-          <Navbar/>
+          {/* <Navbar/> */}
             <section id="header" className="d-flex align-items-center">
                 <div className="container-fluid nav_bg">
                     <div className='row' >
