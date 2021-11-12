@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -14,15 +14,15 @@ const Footer = () => {
       }}
     >
       &copy; {new Date().getFullYear()} LokeshApp |
-      Made with ♥ by{" "}
-
-      {/* <a
+      {/* Made with ♥ by{" "} */}
+      {""} All rights reserved | Powered by {""}
+      <a
         href="https://www.google.com" target="_blank"  rel="noopener noreferrer"
-        style={{ cursor: "pointer" }}
+        style={{ cursor: "pointer" }} title="Visit The Site"
       >
         Lokinder007
-      </a> */}
-      <NavLink to="/about"> Lokinder007 </NavLink>
+      </a>
+      {/* <NavLink to="/about"> Lokinder007 </NavLink> */}
     </div>
   );
 };

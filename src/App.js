@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import ContactApp from './components/ContactApp/ContactApp'
 import Footer from './components/layout/Footer'
 import Navbar from './components/layout/Navbar'
 import About from './components/pages/About'
@@ -11,6 +12,8 @@ import Profile from './components/pages/Profile'
 import Protected from './components/pages/Protected'
 import Register from './components/pages/Register'
 import Services from './components/pages/Services'
+import Todo from './components/Todo/Todo'
+import Weather from './components/Weather/Weather'
 
 
 const App = () => {
@@ -41,6 +44,9 @@ const App = () => {
             <Route exact path="/contact" component={Contact} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/todo" component={Todo} />
+            <Route exact path="/contactApp" component={ContactApp} />
+            <Route exact path="/weather" component={Weather} />
             <Route exact path="/services">  <Protected cmp={Services} /> </Route>
             <Route exact path="/profile">  <Protected cmp={Profile} /> </Route>
 

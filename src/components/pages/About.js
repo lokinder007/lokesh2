@@ -22,7 +22,7 @@ const About = () => {
                                         We are the team of talented developer
                                     </h2>
                                     <div className="mt-3">
-                                        <NavLink to="/contact" className="btn-get-started ">
+                                        <NavLink to="/contact" className="btn ">
                                             Contact Us
                                         </NavLink>
                                     </div>

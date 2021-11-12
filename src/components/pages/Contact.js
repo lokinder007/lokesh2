@@ -52,49 +52,75 @@ const Contact = () => {
                         />
                     </div>
 
-                    <form className="form" onSubmit={formSubmit}>
+                    <form className="form w-50" onSubmit={formSubmit}>
                         <h1 style={{ fontSize: 30 }}>Contact Us</h1>
                         <p style={{ fontSize: 20 }}>Enter Your Details </p>
 
-                        <input
-                            type="text"
-                            // class="form-control"
-                            // id="exampleFormControlInput1"
-                            name="fullname"
-                            value={data.fullname}
-                            onChange={handleChange}
-                            required
-                            placeholder="Enter your name"
-                        />
-                        <input
-                            type="number"
-                            // class="form-control"
-                            // id="exampleFormControlInput1"
-                            name="phone"
-                            value={data.phone}
-                            onChange={handleChange}
-                            placeholder="Your mobile number"
-                        />
-                        <input
-                            type="email"
-                            // className="form-control"
-                            // id="exampleFormControlInput1"
-                            name="email"
-                            value={data.email}
-                            onChange={handleChange}
-                            placeholder="Enter Your Email"
-                        />
-                        <textarea
-                            // className="form-control"
-                            // id="exampleFormControlTextarea1"
-                            rows="3"
-                            name="msg"
-                            value={data.msg}
-                            required
-                            onChange={handleChange}
-                            placeholder="Enter Your Message Here"
-                           />
-                        
+                        <div className="mb-3">
+                            <label htmlFor="name" className="px-3 h3">
+                                Name*:
+                            </label>
+                            <input
+                                type="text"
+                                // class="form-control"
+                                // id="exampleFormControlInput1"
+                                id="name"
+                                name="fullname"
+                                value={data.fullname}
+                                onChange={handleChange}
+                                required
+                                placeholder="Enter your name"
+
+                            />
+                        </div>
+
+                        <div className="mb-3">
+                            <label className="px-3 h3">
+                                Phone:
+                            </label>
+                            <input
+                                type="number"
+                                // class="form-control"
+                                // id="exampleFormControlInput1"
+                                name="phone"
+                                value={data.phone}
+                                onChange={handleChange}
+                                placeholder="Your mobile number"
+                            />
+                        </div>
+
+                        <div className="mb-3">
+                            <label className="px-3 h3">
+                                Email*:
+                            </label>
+                            <input
+                                type="email"
+                                // className="form-control"
+                                // id="exampleFormControlInput1"
+                                name="email"
+                                value={data.email}
+                                onChange={handleChange}
+                                required
+                                placeholder="Enter Your Email"
+                            />
+                        </div>
+
+                        <div className="mb-3 mx-5" >
+                            <label className="px-2 h3">
+                                Message*
+                            </label>
+                            <textarea 
+                                className="text-center w-100 "
+                                // id="exampleFormControlTextarea1"
+                                rows="3"
+                                name="msg"
+                                value={data.msg}
+                                required
+                                onChange={handleChange}
+                                placeholder="Enter Your Message Here"
+                            />
+                        </div>
+
                         {/* <button className="btn btn-outline-primary" type="submit">Submit form</button> */}
                         <button className="button" type="submit">Submit form</button>
                     </form>

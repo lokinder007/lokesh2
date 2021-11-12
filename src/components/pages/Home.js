@@ -21,7 +21,7 @@ const Home = () => {
                                         Here You Can Find Many Services Which Will Make Your Life Easy & Happy 
                                     </h2>
                                     <div className="mt-3">
-                                        <NavLink to="/services" className="btn-get-started ">
+                                        <NavLink to="/services" className="btn ">
                                             Get Started
                                         </NavLink>
                                     </div>

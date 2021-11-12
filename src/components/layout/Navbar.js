@@ -94,9 +94,9 @@ const Navbar = ({user}) => {
                           activeClassName="menu_active"
                           className="nav-link "
                           aria-current="page"
-                          exact to="/"
+                          exact to="/about"
                           activeStyle={{ color: 'blue', fontWeight: 'bold' }}>
-                          Home
+                          About
                         </NavLink>
                       </li>
 
@@ -123,10 +123,10 @@ const Navbar = ({user}) => {
 
                 <div className="social-links">
 
-                  <Link to="/"><i className="fab fa-facebook-f"></i></Link>
-                  <Link to="#"><i className="fab fa-twitter"></i></Link>
-                  <Link to="#"><i className="fab fa-instagram"></i></Link>
-                  <Link to="#"><i className="fab fa-linkedin-in"></i></Link>
+                  <Link to="/" title="Facebook"><i className="fab fa-facebook-f"></i></Link>
+                  <Link to="#" title="Twitter"><i className="fab fa-twitter"></i></Link>
+                  <Link to="#" title="Instagram"><i className="fab fa-instagram"></i></Link>
+                  <Link to="#" title="LinkedIn"><i className="fab fa-linkedin-in"></i></Link>
                 </div>
               </ul>
               {/* <form className="d-flex">

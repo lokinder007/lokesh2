@@ -46,7 +46,7 @@ const Register = () => {
                 <input type="text" name="name" value={user.name} placeholder="Your Name" onChange={handleChange} required />
                 <input type="text" name="email" value={user.email} placeholder="Your Email" onChange={handleChange} required />
                 <input type="password" name="password" value={user.password} placeholder="Your Password" onChange={handleChange} required />
-                <input type="password" name="reEnterPassword" value={user.reEnterPassword} placeholder="Re-enter Password" onChange={handleChange} />
+                <input type="password" name="reEnterPassword" value={user.reEnterPassword} placeholder="Re-enter Password" onChange={handleChange} required />
                 <button className="button" type="submit">Register</button>
             </form>
         </>
