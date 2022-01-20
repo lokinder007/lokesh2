@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import ContactApp from './components/ContactApp/ContactApp'
 import Footer from './components/layout/Footer'
 import Navbar from './components/layout/Navbar'
@@ -38,21 +38,25 @@ const App = () => {
       <>
         <Navbar user={user} />
         <div className="app">
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/about" component={About} />
-            <Route exact path="/contact" component={Contact} />
-            <Route exact path="/register" component={Register} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/todo" component={Todo} />
-            <Route exact path="/contactApp" component={ContactApp} />
-            <Route exact path="/weather" component={Weather} />
-            <Route exact path="/services">  <Protected cmp={Services} /> </Route>
-            <Route exact path="/profile">  <Protected cmp={Profile} /> </Route>
+          <Routes>
+            <Route exact path="/" element={<Home/>} />
+            <Route exact path="/about" element={<About/>} />
+            <Route exact path="/contact" element={<Contact/>} />
+            <Route exact path="/register" element={<Register/>} />
+            <Route exact path="/login" element={<Login/>} />
+            <Route exact path="/todo" element={<Todo/>} />
+            <Route exact path="/contactApp" element={<ContactApp/>} />
+            <Route exact path="/weather" element={<Weather/>} />
+
+            <Route exact path="/services" element={<Protected cmp={Services} />} />
+            <Route exact path="/profile" element={<Protected cmp={Profile} />} />
+            {/* <Route exact path="/services">  <Protected cmp={Services} /> </Route> */}
+            {/* <Route exact path="/profile">  <Protected cmp={Profile} /> </Route> */}
 
             {/* <Route exact path="/errorpage" component={Errorpage} /> */}
-            <Route path="*" component={Errorpage} />
-          </Switch>
+            {/* <Redirect to="/errorpage" /> */}
+            <Route path="*" element={<Errorpage/>} />
+          </Routes>
         </div>
         <Footer />
       </>

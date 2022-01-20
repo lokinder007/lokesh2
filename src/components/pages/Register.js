@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react'
-import { useHistory } from 'react-router';
+import { useNavigate } from 'react-router';
 
 import "./form.css"
 
 
 const Register = () => {
 
-    const history = useHistory();
+    let navigate = useNavigate();
 
     useEffect(() => {
         if (localStorage.getItem('user-login')) {
-            history.push("/services");
-        } else history.push("/register");
-    },[history])
+            navigate("/services");
+        } else navigate("/register");
+    },[navigate])
 
     const [user, setUser] = useState({
         name: "",
@@ -35,7 +35,7 @@ const Register = () => {
             ` ${user.name} you are registered successfully `
           )
           localStorage.setItem("user-info",JSON.stringify(user));
-          history.push("/login");
+          navigate("/login");
     }
 
     return (

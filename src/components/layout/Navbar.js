@@ -1,18 +1,20 @@
 import React, { useState } from 'react'
 import { NavDropdown } from 'react-bootstrap'
-import { Link, NavLink, useHistory } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import "./navbar.css"
 
 
-const Navbar = ({user}) => {
-  const history = useHistory();
-  const userIn = JSON.parse(localStorage.getItem('user-info'));
 
+
+const Navbar = ({user}) => {
+  let navigate = useNavigate();
+  const userIn = JSON.parse(localStorage.getItem('user-info'));
+  
   const [show, setShow] = useState(false)
 
   function logout() {
     localStorage.clear();
-    history.push('/login')
+    navigate('/login')
   }
 
   return (
@@ -78,8 +80,9 @@ const Navbar = ({user}) => {
                      
 
                       <li className="nav-item">
-                        <NavDropdown title={userIn.name} >
-                          <NavDropdown.Item onClick={()=>{history.push('/profile')} }>Profile</NavDropdown.Item>
+                        {/* <NavDropdown title={userIn.name }  > */}
+                        <NavDropdown title={userIn? userIn.name : "UserA"}  >
+                          <NavDropdown.Item onClick={()=>{navigate('/profile')} }>Profile</NavDropdown.Item>
                           <NavDropdown.Item onClick={logout}>Logout</NavDropdown.Item>
 
                         </NavDropdown>

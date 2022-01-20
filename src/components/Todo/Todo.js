@@ -93,7 +93,7 @@ const Todo = () => {
 
     return (
         <>
-                  <h1 className="pb-4">Todo App</h1>
+                  <h1 className=" mb-4 text-success"><b> Todo App </b></h1>
 
             <div className="main-div">
                 <div className="child-div">

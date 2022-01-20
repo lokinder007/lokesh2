@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useHistory } from 'react-router';
+import { useNavigate } from 'react-router-dom'
 import "./form.css"
 import imgcont from "../images/contact.jpg"
 import img2 from "../images/developer.jpg"
@@ -13,7 +13,7 @@ const Contact = () => {
         msg: "",
     })
 
-    const history = useHistory();
+    let navigate = useNavigate();
 
     const handleChange = (e) => {
         const { name, value } = e.target
@@ -26,7 +26,7 @@ const Contact = () => {
             `My name is ${data.fullname}.My mobile number is ${data.phone} and email is ${data.email}, Here is what is whant to say : ${data.msg} `
         )
 
-        history.push("/");
+        navigate("/");
     }
 
     return (
@@ -106,11 +106,11 @@ const Contact = () => {
                         </div>
 
                         <div className="mb-3 mx-5" >
-                            <label className="px-2 h3">
+                            <label className=" h3 float-start">
                                 Message*
                             </label>
                             <textarea 
-                                className="text-center w-100 "
+                                className=" w-100 "
                                 // id="exampleFormControlTextarea1"
                                 rows="3"
                                 name="msg"

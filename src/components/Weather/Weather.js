@@ -3,9 +3,8 @@ import React from 'react'
 const Weather = () => {
     return (
         <>
-            <div className="main">
-                <h1>Weather App</h1>
-            </div>
+           <h1 className=" mb-4 text-success"><b> Weather App </b></h1>
+            
         </>
     )
 }

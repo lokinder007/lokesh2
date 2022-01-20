@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-import { NavLink, useHistory } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 // import Navbar from '../layout/Navbar';
 import "./form.css"
 
@@ -15,13 +15,13 @@ import "./form.css"
 //       };
 
 const Login = () => {
-    const history = useHistory();
+    let navigate = useNavigate();
 
     useEffect(() => {
         if (localStorage.getItem('user-login')) {
-            history.push("/services");
-        } else history.push("/login")
-    },[history])
+            navigate("/services");
+        } else navigate("/login")
+    },[navigate])
 
     // const [user, setUser] = useState({
     //     email: "",
@@ -49,11 +49,11 @@ const Login = () => {
             alert(
                 ` ${email} you are not registered `
             )
-            history.push("/register");
+            navigate("/register");
         } else {
 
             localStorage.setItem("user-login", JSON.stringify(data));
-            history.push("/services");
+            navigate("/services");
         }
     }
 
